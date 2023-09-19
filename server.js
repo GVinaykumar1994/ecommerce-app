@@ -8,7 +8,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import pproductRoutes from "./routes/pproductRoutes.js"
 import cors from "cors";
 import path from "path";
-
+import { fileURLToPath } from 'url';
 
 
 //cofigure env
@@ -16,7 +16,9 @@ dotenv.config();
 
 //database
 connectDB();
-
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //rest object
 const app = express();
 const PORT = process.env.PORT;
